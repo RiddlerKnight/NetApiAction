@@ -6,12 +6,12 @@ on:
       - 'master'
 
 env:
-  REGISTRY_NAME: { registry-name }
-  CLUSTER_NAME: { cluster-name }
-  CLUSTER_RESOURCE_GROUP: { resource-group-name }
-  NAMESPACE: { namespace-name }
-  SECRET: { secret-name }
-  APP_NAME: { app-name }
+  REGISTRY_NAME: '{registry-name}'
+  CLUSTER_NAME: '{cluster-name}'
+  CLUSTER_RESOURCE_GROUP: '{resource-group-name}'
+  NAMESPACE: '{namespace-name}'
+  SECRET: '{secret-name}'
+  APP_NAME: '{app-name}'
 
 jobs:
   app_build:
