@@ -6,11 +6,11 @@ on:
       - 'master'
 
 env:
-  REGISTRY_NAME: demogithubaction
-  CLUSTER_NAME: PuksiAksCluster
-  CLUSTER_RESOURCE_GROUP: Demo_Github_Action
-  NAMESPACE: net-api-action-ns
-  APP_NAME: net-api-action
+  REGISTRY_NAME: 'demogithubaction'
+  CLUSTER_NAME: 'PuksiAksCluster'
+  CLUSTER_RESOURCE_GROUP: 'Demo_Github_Action'
+  NAMESPACE: 'net-api-action-ns'
+  APP_NAME: 'net-api-action'
 
 jobs:
   app_build:
@@ -30,7 +30,8 @@ jobs:
       # Build and puch to ACR
       - name: Build and puch to ACR
         run: |
-          docker build -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }} .
+          docker build -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:${{ github.sha }} \
+                       -t ${{ env.REGISTRY_NAME }}.azurecr.io/${{ env.APP_NAME }}:latest .
           docker push -a ${{ env.REGISTRY_NAME }}.azurecr.io
 
       - name: Deploy to AKS
