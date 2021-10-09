@@ -1,5 +1,6 @@
-# Just Read me
+# This Project is an example github action
 
-hellow world
+1. Learn to use git command
+2. Learn about git status lifecycle
 
 
